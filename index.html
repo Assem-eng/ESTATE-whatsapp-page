@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +9,39 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-background-image: url('image.jpg');
-background-repeat: no-repeat;
-background-position: center center;
-background-size: cover;
-min-height: 100vh;
+      min-height: 100vh;
+      background-color: #000;
+      background-image: url('image.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain; /* 🔥 الصورة كاملة بدون قص */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* طبقة غامقة فوق الصورة */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.65);
       color: white;
-      padding: 30px;
+      padding: 30px 25px;
       text-align: center;
-      border-radius: 10px;
-      width: 80%;
+      border-radius: 12px;
+      width: 85%;
       max-width: 320px;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 42px;
       font-weight: bold;
       letter-spacing: 2px;
       margin: 0 0 15px 0;
@@ -35,26 +49,21 @@ min-height: 100vh;
 
     .highlight {
       color: #000;
-      background: rgba(243, 156, 18, 1);
-      padding: 8px 9px;
+      background: #f39c12;
+      padding: 10px 12px;
       border-radius: 6px;
       display: inline-block;
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    #counter {
-      font-size: 32px;
-      font-weight: bold;
+      font-size: 17px;
+      margin-bottom: 18px;
     }
 
     button {
       font-size: 16px;
-      padding: 10px 20px;
+      padding: 12px 22px;
       background-color: #25D366;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
       transition: transform 0.15s ease, background-color 0.15s ease;
     }
@@ -68,30 +77,25 @@ min-height: 100vh;
 
 <body>
 
-<div class="container">
-  <h1>MAS</h1>
+<div class="overlay">
+  <div class="container">
+    <h1>MAS</h1>
 
-  <p class="highlight">
-    شقق باقل سعر في نطاق المرج <br>
-  </p>
+    <div class="highlight">
+      شقق بأقل سعر في نطاق المرج
+    </div>
 
-
-  <!-- الزر فقط بدون لينك مباشر -->
-  <button id="whatsappBtn">تواصل واتساب</button>
+    <button id="whatsappBtn">تواصل واتساب</button>
+  </div>
 </div>
 
 <script>
   const btn = document.getElementById('whatsappBtn');
 
   btn.addEventListener('click', () => {
-
-    if (count > 0) {
-      count--;
-      counter.textContent = count;
-    }
-
     const message = 'السلام عليكم، شوفت الإعلان وحابب أعرف تفاصيل الشقق';
-    const whatsappLink = 'https://wa.me/201146467579?text=' + encodeURIComponent(message);
+    const whatsappLink =
+      'https://wa.me/201146467579?text=' + encodeURIComponent(message);
 
     window.open(whatsappLink, '_blank');
   });
