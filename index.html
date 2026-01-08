@@ -14,30 +14,32 @@
       background-image: url('image.jpg');
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: contain; /* 🔥 الصورة كاملة بدون قص */
+      background-size: contain;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    /* طبقة غامقة فوق الصورة */
+    /* غمقان خفيف جدا عشان الصورة تبان */
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.25);
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
+    /* بوكس أوضح */
     .container {
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.45);
       color: white;
       padding: 30px 25px;
       text-align: center;
-      border-radius: 12px;
+      border-radius: 14px;
       width: 85%;
       max-width: 320px;
+      backdrop-filter: blur(2px);
     }
 
     h1 {
@@ -49,28 +51,30 @@
 
     .highlight {
       color: #000;
-      background: #f39c12;
-      padding: 10px 12px;
-      border-radius: 6px;
+      background: #f7b731;
+      padding: 10px 14px;
+      border-radius: 8px;
       display: inline-block;
       font-size: 17px;
       margin-bottom: 18px;
     }
 
+    /* زر واتساب فاتح */
     button {
-      font-size: 16px;
-      padding: 12px 22px;
-      background-color: #25D366;
-      color: white;
+      font-size: 17px;
+      padding: 13px 26px;
+      background-color: #4cd964;
+      color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.15s ease, background-color 0.15s ease;
+      box-shadow: 0 6px 15px rgba(76, 217, 100, 0.45);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     button:hover {
-      background-color: #1ebe57;
       transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(76, 217, 100, 0.65);
     }
   </style>
 </head>
@@ -90,9 +94,7 @@
 </div>
 
 <script>
-  const btn = document.getElementById('whatsappBtn');
-
-  btn.addEventListener('click', () => {
+  document.getElementById('whatsappBtn').addEventListener('click', () => {
     const message = 'السلام عليكم، شوفت الإعلان وحابب أعرف تفاصيل الشقق';
     const whatsappLink =
       'https://wa.me/201146467579?text=' + encodeURIComponent(message);
