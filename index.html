@@ -44,13 +44,6 @@
       margin-bottom: 15px;
     }
 
-    #counterBox {
-      background: rgba(0, 128, 0, 0.6);
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
     #counter {
       font-size: 32px;
       font-weight: bold;
@@ -77,24 +70,18 @@
 <body>
 
 <div class="container">
-  <h1>STC</h1>
+  <h1>MAS</h1>
 
   <p class="highlight">
-    بادر بالتقديم<br>
-    قبل اكتمال العدد المطلوب
+    شقق باقل سعر في نطاق المرج <br>
   </p>
 
-  <div id="counterBox">
-    🔥 متبقي <span id="counter">50</span> متقدم
-  </div>
 
   <!-- الزر فقط بدون لينك مباشر -->
   <button id="whatsappBtn">تواصل واتساب</button>
 </div>
 
 <script>
-  let count = 50;
-  const counter = document.getElementById('counter');
   const btn = document.getElementById('whatsappBtn');
 
   btn.addEventListener('click', () => {
@@ -104,8 +91,8 @@
       counter.textContent = count;
     }
 
-    const message = 'السلام عليكم، شوفت الإعلان وحابب أعرف التفاصيل';
-    const whatsappLink = 'https://wa.me/201149590260?text=' + encodeURIComponent(message);
+    const message = 'السلام عليكم، شوفت الإعلان وحابب أعرف تفاصيل الشقق';
+    const whatsappLink = 'https://wa.me/201146467579?text=' + encodeURIComponent(message);
 
     window.open(whatsappLink, '_blank');
   });
